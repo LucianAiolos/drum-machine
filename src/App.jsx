@@ -12,12 +12,23 @@ function App() {
     }
   },[])
 
+  const event = useMIDINote(inputs[0], { channel: 1 })
+
+  if(!event) {
+    return <div>Waiting for note</div>
+  }
+
+  const { on, note, velocity, channel } = event
+
 
   console.log(inputs, outputs, hasMIDI)
   return (
     <div className="App">
       <h1>Midi Drum Machine</h1>
       <p>{inputsCheck ? 'No Midi Inputs Detected' : ''}</p>
+      <div>
+        Note { note } { on ? 'on' : 'off' } ({ velocity }) on channel {channel}
+      </div>
     </div>
   );
 }
