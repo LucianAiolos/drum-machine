@@ -1,8 +1,8 @@
 html, body, #root {
   margin: 0;
   top: 0;
-  /* width: 100%;
-  height: 100%; */
+  width: 100%;
+  height: 100%;
 }
 
 body {
@@ -14,9 +14,43 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(69, 6, 100);
   color: whitesmoke;
+
+  
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.pads-container {
+  margin-top: 5rem;
+  padding: 20px;
+  height: 600px;
+  min-width: 70%;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+
+  background-color: rgb(13, 12, 12);
+  border-radius: 10px;
+}
+
+.pad {
+  background-color: rgb(38, 38, 38);
+
+}
+
+.active {
+  border-bottom: 1px;
+  border-right: 2px;
+  border-color: red 1px;
+
 }

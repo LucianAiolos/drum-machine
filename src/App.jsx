@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import {useMIDI, useMIDINote, useMIDIControl } from '@react-midi/hooks'
+import Pads from './Pads'
 
 function App() {
   const { inputs, outputs, hasMIDI } = useMIDI()
@@ -30,7 +31,9 @@ function App() {
       <div>
         Note { note } { on ? 'on' : 'off' } ({ velocity }) on channel {channel}
       </div>
-      <div>Value: {control.value}</div>
+      <div>Value: {control.value} Control: {control.control}</div>
+
+      <Pads />
     </div>
   );
 }
