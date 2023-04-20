@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import {useMIDI, useMIDINote } from '@react-midi/hooks'
+import {useMIDI, useMIDINote, useMIDIControl } from '@react-midi/hooks'
 
 function App() {
   const { inputs, outputs, hasMIDI } = useMIDI()
@@ -13,6 +13,7 @@ function App() {
   },[])
 
   const event = useMIDINote(inputs[0], { channel: 1 })
+  const control = useMIDIControl(inputs[0], { channel: 1})
 
   if(!event) {
     return <div>Waiting for note</div>
@@ -29,6 +30,7 @@ function App() {
       <div>
         Note { note } { on ? 'on' : 'off' } ({ velocity }) on channel {channel}
       </div>
+      <div>Value: {control.value}</div>
     </div>
   );
 }
