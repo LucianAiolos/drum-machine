@@ -20,10 +20,10 @@ function App() {
     return <div>Waiting for note</div>
   }
 
+
+
   const { on, note, velocity, channel } = event
 
-
-  console.log(inputs, outputs, hasMIDI)
   return (
     <div className="App">
       <h1>Midi Drum Machine</h1>
